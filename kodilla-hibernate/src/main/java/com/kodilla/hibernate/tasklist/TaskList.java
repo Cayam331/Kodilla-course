@@ -5,16 +5,16 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "TASKLISTS")
-public final class taskList {
+public final class TaskList {
     private int id;
     private String listName;
     private String description;
 
-    public taskList(String listName, String description) {
+    public TaskList(String listName, String description) {
         this.listName = listName;
         this.description = description;
     }
-    private taskList(){
+    private TaskList(){
 
     }
 

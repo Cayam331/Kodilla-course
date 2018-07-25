@@ -1,7 +1,7 @@
 package com.kodilla.hibernate.tasklist.dao;
 
 
-import com.kodilla.hibernate.tasklist.taskList;
+import com.kodilla.hibernate.tasklist.TaskList;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,11 +20,11 @@ public class taskListDaoTestSuite {
     @Test
     public void testFindByListName() {
         //Given
-        taskList taskList1 = new taskList("To do List", "List with things to do");
+        TaskList taskList1 = new TaskList("To do List", "List with things to do");
 
         //When
         taskListDao.save(taskList1);
-        List<taskList> resultTaskList = taskListDao.findByListName("To do List");
+        List<TaskList> resultTaskList = taskListDao.findByListName("To do List");
         int id = taskList1.getId();
 
         //Then
