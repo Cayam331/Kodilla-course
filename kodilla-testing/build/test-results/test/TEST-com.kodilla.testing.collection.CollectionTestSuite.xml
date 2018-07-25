@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.testing.collection.CollectionTestSuite" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-07-25T07:59:13" hostname="WINDOWS-POOF9JD" time="0.005">
+  <properties/>
+  <testcase name="testOddNumbersExterminatorEmptyList" classname="com.kodilla.testing.collection.CollectionTestSuite" time="0.004"/>
+  <testcase name="testOddNumbersExterminatorNormalList" classname="com.kodilla.testing.collection.CollectionTestSuite" time="0.0"/>
+  <system-out><![CDATA[Test Suite: begin
+Test case: begin
+Testing case with empty list
+Test case: end
+Test case: begin
+Testing case with list with numbers
+Test case: end
+Test Suite: end
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

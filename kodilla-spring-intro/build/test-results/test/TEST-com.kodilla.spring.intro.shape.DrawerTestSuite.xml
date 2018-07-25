@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.spring.intro.shape.DrawerTestSuite" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-07-25T07:59:09" hostname="WINDOWS-POOF9JD" time="0.007">
+  <properties/>
+  <testcase name="testDoDrawingWithTriangle" classname="com.kodilla.spring.intro.shape.DrawerTestSuite" time="0.006"/>
+  <testcase name="testDoDrawingWithCircle" classname="com.kodilla.spring.intro.shape.DrawerTestSuite" time="0.001"/>
+  <system-out><![CDATA[This is a triangle
+This is a circle
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

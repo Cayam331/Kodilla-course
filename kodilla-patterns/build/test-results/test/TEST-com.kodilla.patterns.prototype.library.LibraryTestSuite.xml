@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.patterns.prototype.library.LibraryTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-07-25T07:59:00" hostname="WINDOWS-POOF9JD" time="0.007">
+  <properties/>
+  <testcase name="testGetBooks" classname="com.kodilla.patterns.prototype.library.LibraryTestSuite" time="0.007"/>
+  <system-out><![CDATA[biblioteka books=[Book{title='Krzyzacy', author='Sienkiewicz', publicationDate=2017-06-14}, Book{title='Potop', author='Sienkiewicz', publicationDate=2010-10-19}]}
+biblioteka druga books=[Book{title='Krzyzacy', author='Sienkiewicz', publicationDate=2017-06-14}, Book{title='Potop', author='Sienkiewicz', publicationDate=2010-10-19}]}
+biblioteka trzecia books=[Book{title='Krzyzacy', author='Sienkiewicz', publicationDate=2017-06-14}, Book{title='Potop', author='Sienkiewicz', publicationDate=2010-10-19}, Book{title='Gra o tron', author='Martin', publicationDate=2000-05-10}]}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

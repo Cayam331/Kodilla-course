@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.testing.forum.statistics.StatisticsCounterTestSuite" tests="7" skipped="0" failures="0" errors="0" timestamp="2018-07-25T07:59:13" hostname="WINDOWS-POOF9JD" time="0.118">
+  <properties/>
+  <testcase name="testCalculateAdvStatisticsMoreCommentsThanPosts" classname="com.kodilla.testing.forum.statistics.StatisticsCounterTestSuite" time="0.11"/>
+  <testcase name="testCalculateAdvStatistics0Posts" classname="com.kodilla.testing.forum.statistics.StatisticsCounterTestSuite" time="0.001"/>
+  <testcase name="testCalculateAdvStatistics0Users" classname="com.kodilla.testing.forum.statistics.StatisticsCounterTestSuite" time="0.001"/>
+  <testcase name="testCalculateAdvStatisticsRandomData" classname="com.kodilla.testing.forum.statistics.StatisticsCounterTestSuite" time="0.0"/>
+  <testcase name="testCalculateAdvStatistics100Users" classname="com.kodilla.testing.forum.statistics.StatisticsCounterTestSuite" time="0.002"/>
+  <testcase name="testCalculateAdvStatisticsLessCommentsThanPosts" classname="com.kodilla.testing.forum.statistics.StatisticsCounterTestSuite" time="0.001"/>
+  <testcase name="testCalculateAdvStatistics1000Posts" classname="com.kodilla.testing.forum.statistics.StatisticsCounterTestSuite" time="0.001"/>
+  <system-out><![CDATA[Starting test suite
+Executing test number: 1
+Test number: 1 positive
+Executing test number: 2
+Test number: 2 positive
+Executing test number: 3
+Test number: 3 positive
+Executing test number: 4
+Test number: 4 positive
+Executing test number: 5
+Test number: 5 positive
+Executing test number: 6
+Test number: 6 positive
+Executing test number: 7
+Test number: 7 positive
+Ending test suite
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
