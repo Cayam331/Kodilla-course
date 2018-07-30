@@ -7,22 +7,14 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "ITEMS")
 public class Item {
-
     private int id;
+    private int quantity;
     private Product product;
     private BigDecimal price;
-    private int quantity;
     private BigDecimal value;
     private Invoice invoice;
 
-    @ManyToOne
-    @JoinColumn(name = "INVOICE_ID")
-    public Invoice getInvoice() {
-        return invoice;
-    }
-
-    public void setInvoice(Invoice invoice) {
-        this.invoice = invoice;
+    public Item() {
     }
 
     public Item(BigDecimal price, int quantity, BigDecimal value) {
@@ -30,10 +22,29 @@ public class Item {
         this.quantity = quantity;
         this.value = value;
     }
-    public Item(){
 
+    @Id
+    @GeneratedValue
+    @NotNull
+    @Column(name = "ITEM_ID", unique = true)
+    public int getId() {
+        return id;
     }
-    @ManyToOne
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Column(name = "QUANTITY")
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "PRODUCT_ID")
     public Product getProduct() {
         return product;
@@ -43,39 +54,31 @@ public class Item {
         this.product = product;
     }
 
-    @NotNull
     @Column(name = "PRICE")
     public BigDecimal getPrice() {
         return price;
     }
 
-    private void setPrice(BigDecimal price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
-    @NotNull
-    @Column(name = "QUANTITY")
-    public int getQuantity() {
-        return quantity;
-    }
 
-    private void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-    @NotNull
     @Column(name = "VALUE")
     public BigDecimal getValue() {
         return value;
     }
 
-    private void setValue(BigDecimal value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
-    @Id
-    @GeneratedValue
-    @NotNull
-    @Column(name = "ID", unique = true)
-    public int getId() {
-        return id;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "INVOICES_ID")
+    public Invoice getInvoice() {
+        return invoice;
+    }
+
+    public void setInvoice(Invoice invoice) {
+        this.invoice = invoice;
     }
 }
