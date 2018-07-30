@@ -70,4 +70,12 @@ public class Item {
     private void setValue(BigDecimal value) {
         this.value = value;
     }
+
+    @Id
+    @GeneratedValue
+    @NotNull
+    @Column(name = "ID", unique = true)
+    public int getId() {
+        return id;
+    }
 }
