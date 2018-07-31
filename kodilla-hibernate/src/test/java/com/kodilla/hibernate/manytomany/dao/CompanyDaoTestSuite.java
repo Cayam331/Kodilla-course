@@ -9,11 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CompanyDaoTestSuite {
     @Autowired
     CompanyDao companyDao;
+    @Autowired
+    EmployeeDao employeeDao;
 
     @Test
     public void testSaveManyToMany(){
@@ -52,12 +56,65 @@ public class CompanyDaoTestSuite {
         Assert.assertNotEquals(0, greyMatterId);
 
         //CleanUp
-        //try {
-        //    companyDao.delete(softwareMachineId);
-        //    companyDao.delete(dataMaestersId);
-        //    companyDao.delete(greyMatterId);
-        //} catch (Exception e) {
-        //    //do nothing
-        //}
+        try {
+            companyDao.delete(softwareMachineId);
+            companyDao.delete(dataMaestersId);
+            companyDao.delete(greyMatterId);
+        } catch (Exception e) {
+            //do nothing
+        }
+    }
+    @Test
+    public void testFindEmployeeWithLastname(){
+        //Given
+        Employee johnSmith = new Employee("John", "Smith");
+        employeeDao.save(johnSmith);
+        int smithId = johnSmith.getId();
+        //When
+        List<Employee> employeeList = employeeDao.retrieveEmployeesWithLastName("Smith");
+
+        //Then
+        Assert.assertEquals(employeeList.get(0).getLastname(), "Smith");
+
+        //Clean
+        try{
+            employeeDao.delete(smithId);
+        } catch (Exception e){
+            System.out.println("Can't delete employee");
+        }
+
+    }
+    @Test
+    public void testFindCompanyWithFirstThreeMatchingChars(){
+        //Given
+        Company softwareMachine = new Company("Software Machine");
+        Company dataMaesters = new Company("Software Maesters");
+        Company greyMatter = new Company("Grey Matter");
+
+        companyDao.save(softwareMachine);
+        int softwareMachineId = softwareMachine.getId();
+        companyDao.save(dataMaesters);
+        int dataMaestersId = dataMaesters.getId();
+        companyDao.save(greyMatter);
+        int greyMatterId = greyMatter.getId();
+
+        //When
+        List<Company> resultList = companyDao.retrieveCompaniesWithFirstThreeMatchingChars("Soft");
+
+        //Then
+        for(Company company: resultList){
+            System.out.println(company.getName());
+        }
+        Assert.assertEquals(resultList.size(), 2);
+
+        //Clean
+        try{
+            companyDao.delete(softwareMachineId);
+            companyDao.delete(dataMaestersId);
+            companyDao.delete(greyMatterId);
+        } catch (Exception e){
+            System.out.println("Can't delete company");
+        }
+
     }
 }
