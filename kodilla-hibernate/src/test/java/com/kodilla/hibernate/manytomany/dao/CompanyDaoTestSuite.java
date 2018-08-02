@@ -99,13 +99,13 @@ public class CompanyDaoTestSuite {
         int greyMatterId = greyMatter.getId();
 
         //When
-        List<Company> resultList = companyDao.retrieveCompaniesWithFirstThreeMatchingChars("Soft");
+        List<Company> resultList = companyDao.retrieveCompaniesWithFirstThreeMatchingChars("Soft%");
 
         //Then
         for(Company company: resultList){
             System.out.println(company.getName());
         }
-        Assert.assertEquals(resultList.size(), 2);
+        Assert.assertEquals(2, resultList.size());
 
         //Clean
         try{
