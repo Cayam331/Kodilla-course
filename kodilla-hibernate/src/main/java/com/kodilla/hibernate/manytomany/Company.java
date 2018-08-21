@@ -5,11 +5,19 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedNativeQuery(
-        name = "Company.retrieveCompaniesWithFirstThreeMatchingChars",
-        query = "SELECT * FROM COMPANIES" + " WHERE COMPANY_NAME LIKE :COMPANYNAME",
-        resultClass = Company.class
 
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name="Company.retrieveCompaniesByName",
+                query = "SELECT * FROM COMPANIES" + " WHERE COMPANY_NAME LIKE :NAMEE",
+                resultClass = Company.class
+        ),
+        @NamedNativeQuery(
+                name = "Company.retrieveCompaniesWithFirstThreeMatchingChars",
+                query = "SELECT * FROM COMPANIES" + " WHERE COMPANY_NAME LIKE :COMPANYNAME",
+                resultClass = Company.class
+        )
+}
 )
 
 @Entity
